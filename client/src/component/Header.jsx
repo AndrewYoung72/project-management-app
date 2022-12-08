@@ -1,5 +1,7 @@
 import React from "react";
 import gitlogo from "./assets/gitlogo.svg"
+import graphlogo from "./assets/graphlogo.png"
+
 
 const Header = () => {
   return (
@@ -7,7 +9,7 @@ const Header = () => {
       <div className="container">
         <a className="navbar-brand" href="/">
           <div className="d-flex">
-            <img src={gitlogo} alt="logo" className="mr-2"/>
+            <img src={graphlogo} alt="logo" className="mr-2"/>
             <div>Project Management App</div>
           </div>
         </a>
