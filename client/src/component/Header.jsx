@@ -1,5 +1,4 @@
 import React from "react";
-import gitlogo from "./assets/gitlogo.svg"
 import graphlogo from "./assets/graphlogo.png"
 
 
