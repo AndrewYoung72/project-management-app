@@ -1,4 +1,3 @@
-import React from "react";
 import { useState } from "react";
 import { FaList } from "react-icons/fa";
 import { useMutation, useQuery } from "@apollo/client";
@@ -6,11 +5,11 @@ import { ADD_PROJECT } from "../mutations/projectMutations";
 import { GET_PROJECTS } from "../queries/projectQueries";
 import { GET_CLIENTS } from "../queries/clientQueries";
 
-const AddProjectModal = () => {
-  const [name, setName] = useState("");
-  const [description, setDescription] = useState("");
+export default function AddProjectModal()  {
+  const [name, setName] = useState(" ");
+  const [description, setDescription] = useState(" ");
   const [status, setStatus] = useState("new");
-  const [clientId, setClientId] = useState("");
+  const [clientId, setClientId] = useState(" ");
 
   // Add project
   const [addProject] = useMutation(ADD_PROJECT, {
@@ -19,10 +18,10 @@ const AddProjectModal = () => {
       const { projects } = cache.readQuery({ query: GET_PROJECTS });
       cache.writeQuery({
         query: GET_PROJECTS,
-        data: { projects: [...projects, addProject] },
+        data: { projects: projects.concat([addProject]) },
       });
     }
-  });
+  })
 
   // Get clients for select
   const { loading, error, data } = useQuery(GET_CLIENTS);
@@ -30,6 +29,7 @@ const AddProjectModal = () => {
 
   const onSubmit = (e) => {
     e.preventDefault();
+
     if (name === "" || description === "" || status === "") {
       return alert("Please fill in alll fields");
     }
@@ -41,8 +41,8 @@ const AddProjectModal = () => {
     setClientId("");
   };
 
-  if (loading) return null;
-  if (error) return "Something went wrong";
+  if (loading) return <p>Loading...</p>;
+  if (error) return <p>Something went wrong!</p>;
 
   return (
   <>
@@ -120,7 +120,7 @@ const AddProjectModal = () => {
                           <option value="">Select Client</option>
                           {data.clients.map((client) => (
                             <option key={client.id} value={client.id}>{client.name}</option>
-                          )) }
+                          ))}
                         </select>
                       </div>
                       
@@ -142,4 +142,4 @@ const AddProjectModal = () => {
   );
 }
 
-export default AddProjectModal;
+
