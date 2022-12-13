@@ -1,17 +1,15 @@
 import React from "react";
-import graphlogo from "./assets/graphlogo.png"
+// import graphlogo from "./assets/graphlogo.png"
 
 
 const Header = () => {
   return (
-    <nav className="navbar bg-light mb-4 p-0">
+    <nav className="navbar-brand bg-light mb-4 p-0">
       <div className="container">
-        <a className="navbar-brand" href="/">
-          <div className="d-flex">
-            <img src={graphlogo} alt="logo" className="mr-2"/>
-            <div>Project Management App</div>
+          <div className="d-flex justify-content-center">
+            {/* <img src={graphlogo} alt="logo" className="mr-2"/> */}
+            <h3>Project Management App</h3>
           </div>
-        </a>
       </div>
     </nav>
   );
