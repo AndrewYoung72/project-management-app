@@ -13,14 +13,7 @@ code {
 }
 
 
-.navbar-brand {
-  color: #df3ca6;
-}
 
-.navbar-brand img {
-  width: 30px;
-  margin-right: 10px;
-}
 
 .btn {
   font-size: 15px;
@@ -28,21 +21,18 @@ code {
 
 .btn-primary,
 .bg-primary {
-  background-color: #df3ca6 !important;
   border: none;
 }
 
 .btn-primary:hover {
-  background-color: #df3ca6;
   opacity: 0.9;
 }
 
 .btn-secondary {
-  background-color: #6c82ed;
+  
 }
 
 .btn-secondary:hover {
-  background-color: #7430f9;
   opacity: 0.9;
 }
 
