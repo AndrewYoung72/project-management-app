@@ -12,6 +12,12 @@ code {
     monospace;
 }
 
+.img {
+  width: 25%;
+  height: 50%;
+  margin: 10px;
+  padding: 10px;
+}
 
 
 
